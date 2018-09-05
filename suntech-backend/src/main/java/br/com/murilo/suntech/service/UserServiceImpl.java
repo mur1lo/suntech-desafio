@@ -1,8 +1,9 @@
 package br.com.murilo.suntech.service;
 
-import br.com.murilo.suntech.domain.UserDto;
-import br.com.murilo.suntech.domain.UserMapper;
+import br.com.murilo.suntech.domain.User;
 import br.com.murilo.suntech.repository.UserRepository;
+import br.com.murilo.suntech.service.dto.UserDto;
+import br.com.murilo.suntech.service.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +24,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto saveUser(UserDto userDto) {
-        /*this.userRepository.save(userDto);*/
-        return null;
+        User user = userMapper.toEntity(userDto);
+        user = this.userRepository.save(user);
+        userDto = userMapper.toDto(user);
+        return userDto;
     }
 }

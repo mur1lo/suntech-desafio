@@ -1,4 +1,4 @@
-package br.com.murilo.suntech.domain;
+package br.com.murilo.suntech.service.dto;
 
 import java.util.Date;
 

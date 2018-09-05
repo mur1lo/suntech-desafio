@@ -1,8 +1,7 @@
 package br.com.murilo.suntech.resource;
 
-import br.com.murilo.suntech.domain.User;
-import br.com.murilo.suntech.domain.UserDto;
 import br.com.murilo.suntech.service.UserService;
+import br.com.murilo.suntech.service.dto.UserDto;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,13 +37,12 @@ public class UserResource {
 
 	@PostMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ApiOperation(value = "Save/update a user")
-	public ResponseEntity<User> saveUser(@RequestBody UserDto userDto) {
+	public ResponseEntity<UserDto> saveUser(@RequestBody UserDto userDto) {
         log.debug("REST request to save User : {}", userDto);
-		User response = null;
+		UserDto response = null;
 		try {
-
+			response = this.userService.saveUser(userDto);
 		}catch (Exception e) {
-			e.printStackTrace();
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<>(response, HttpStatus.CREATED);
