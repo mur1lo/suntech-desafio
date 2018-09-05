@@ -9,14 +9,14 @@
 ## Para suntech-backend ###
 * 1 - Execute `./mvnw install`
 * 1.2 - Execute `./mvnw spring-boot:run`
-* 1.3 - Documentação com swagger em: `http://localhost:8080/suntech/swagger-ui.html`
+* 1.3 - Documentação com swagger em: 'http://localhost:8080/suntech/swagger-ui.html'
 * 1.4 - Spring iniciará uma carga inicial de dados
 * 1.5 - Banco disponível em: 'http://localhost:8080/suntech/h2'
 
 ## Para suntech-frontend ###
 * 2 - Execute `npm install`
 * 2.2 - Execute `npm start`
-* 2.3 - Acesse: `http://localhost:4200/`
+* 2.3 - Acesse: 'http://localhost:4200/'
 
 
 ## Tecnologia ###
