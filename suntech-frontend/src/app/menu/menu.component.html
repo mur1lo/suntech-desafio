@@ -1,0 +1,26 @@
+<mat-toolbar class="menu-bg-gama shadow-1p">
+    <button mat-icon-button color="default">
+      <!-- <mat-icon aria-label="Clique para abrir o menu" (click)="test(start)">menu</mat-icon> -->
+      <mat-icon aria-label="Clique para abrir o menu" (click)="drawer.toggle()">menu</mat-icon>
+    </button>
+
+  <span>Usuário</span>
+  <span class="menu-space"></span>
+
+
+  <button mat-button [matMenuTriggerFor]="menuIdioma">
+    <i class="material-icons icon-layout">language</i> Idioma
+    <mat-menu #menuIdioma="matMenu">
+      <button mat-menu-item>Português (Brasileiro)</button>
+      <button mat-menu-item>Inglês</button>
+    </mat-menu>
+  </button>
+  <button mat-button [matMenuTriggerFor]="menuAdm">
+    <i class="material-icons icon-layout">account_circle</i>Administrador
+    <mat-menu #menuAdm="matMenu">
+      <button mat-menu-item>Configuração</button>
+      <button mat-menu-item>Senha</button>
+      <button mat-menu-item>Sair</button>
+    </mat-menu>
+  </button>
+</mat-toolbar>

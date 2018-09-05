@@ -1,0 +1,73 @@
+<div class="content" autosize>
+  <mat-card class="card-table mat-elevation-z8">
+    <mat-card-title>Usuários</mat-card-title>
+    <mat-form-field flex="100">
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Procurar">
+    </mat-form-field>
+    <mat-table #table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Id.</mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.id}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Nome</mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.name}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="surName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Sobrenome</mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.surName}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Email</mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.email}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="phone">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Telefone</mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.phone}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="userName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Usuário</mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.userName}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="registerDate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Data registro</mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.registerDate | date: 'dd/MM/yyyy' }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="enabled">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Ativo</mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.enabled ? 'Sim' : 'Não' }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="password">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Senha</mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.password }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="actionsColumn">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let user">
+          <div class="button-row">
+            <button mat-mini-fab (click)="openDialog(user)">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]">
+    </mat-paginator>
+  </mat-card>
+</div>
