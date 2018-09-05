@@ -18,4 +18,9 @@
 * 2.2 - Execute `npm start`
 * 2.3 - Acesse: `http://localhost:4200/`
 
-**Java version: 1.8**
+
+## Tecnologia ###
+* `java 8`
+* `Spring boot`
+* `[Mapstruct](http://mapstruct.org/)`
+
