@@ -22,5 +22,5 @@
 ## Tecnologia ###
 * `java 8`
 * `Spring boot`
-* `[Mapstruct](http://mapstruct.org/)`
+* [Mapstruct](http://mapstruct.org/)
 
